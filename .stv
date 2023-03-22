@@ -1,0 +1,4 @@
+alias stv-v-arch="distrobox-enter --name arch  -- command pacman"
+alias sudo-stv-v-arch="distrobox-enter --name arch  -- command sudo pacman"
+alias sudo-stv-v-ubuntu="sudo apt"
+alias stv-v-ubuntu="apt"
