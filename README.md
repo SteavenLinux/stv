@@ -1,5 +1,6 @@
 # stv
-SteavenBuntu Package Manager stv
+SteavenBuntu DistroBox Magic
+
 
 # Installtion
 
