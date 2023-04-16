@@ -1,4 +1,4 @@
-stv() {
+stv-install() {
   if [[ $1 == "-v" ]]; then
     x=$@
     if [[ $2 == "ubuntu" ]]; then
@@ -10,6 +10,23 @@ stv() {
     elif [[ $2 == "fedora" ]]; then
         x=${x/-v fedora/}
         distrobox-enter -H fedora -- sudo dnf $x
+    else
+        echo "Command Not Found"
+    fi
+  fi
+}
+stv() {
+  if [[ $1 == "-v" ]]; then
+    x=$@
+    if [[ $2 == "ubuntu" ]]; then
+        x=${x/-v ubuntu/}
+         $x
+    elif [[ $2 == "arch" ]]; then
+        x=${x/-v arch/}
+        distrobox-enter -H arch -- $x
+    elif [[ $2 == "fedora" ]]; then
+        x=${x/-v fedora/}
+        distrobox-enter -H fedora -- $x
     else
         echo "Command Not Found"
     fi
