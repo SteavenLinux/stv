@@ -1,15 +1,14 @@
-alias stv-v-arch="distrobox-enter --name arch  --command pacman"
-alias sudo-stv-v-arch="distrobox-enter --name arch  --command sudo pacman"
-alias sudo-stv-v-ubuntu="sudo apt"
-alias stv-v-ubuntu="apt"
 stv() {
-    if [[ $@ == "-v ubuntu" ]]; then
-        command echo "Did you mean sudo-stv-v-ubuntu"
-    fi
-    if [[ $@ == "-v arch" ]]; then
-        command echo "Did you mean sudo-stv-v-arch"
-    fi
+  if [[ $1 == "-v" ]]; then
+    x=$@
+    if [[ $2 == "ubuntu" ]]; then
+        x=${x/-v ubuntu/}
+        sudo apt $x
+    elif [[ $2 == "arch" ]]; then
+        x=${x/-v arch/}
+        distrobox-enter --name arch  --command sudo pacman $x
     else
-        command echo "Command Not Found"
+        echo "Command Not Found"
     fi
+  fi
 }
