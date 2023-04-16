@@ -6,7 +6,10 @@ stv() {
         sudo apt $x
     elif [[ $2 == "arch" ]]; then
         x=${x/-v arch/}
-        distrobox-enter --name arch  --command sudo pacman $x
+        distrobox-enter -H arch -- sudo pacman $x
+    elif [[ $2 == "fedora" ]]; then
+        x=${x/-v fedora/}
+        distrobox-enter -H fedora -- sudo dnf $x
     else
         echo "Command Not Found"
     fi
