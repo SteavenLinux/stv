@@ -1,3 +1,7 @@
+#
+MOVED TO 
+https://github.com/SteavenLinux/Scripts/blob/main/stv.sh
+
 # stv
 SteavenBuntu DistroBox Magic
 
